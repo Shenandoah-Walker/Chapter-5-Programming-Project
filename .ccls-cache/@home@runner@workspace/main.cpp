@@ -27,7 +27,8 @@ int main() {
   }
   //Prompt the user to input the name of the town, the starting year, and the number of years between the data points provided in the file.
   cout << "Enter the name of the town: ";
-  cin >> townName;
+  cin.ignore();
+  getline(cin, townName);
   cout << "Enter the starting year: ";
   cin >> startingYear;
   cout << "Enter the number of years between the data points provided in the file: ";
@@ -44,7 +45,9 @@ int main() {
     cout << endl;
     startingYear += interval;
   }
-  
-  
-  
+
+  //Close the file.
+  inputFile.close();
+
+  return (0);
 }
